@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>All Users</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin: auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            border: 2px solid white;
+            padding: 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+            text-align: center;
+        }
+
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        .user-table th,
+        .user-table td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .user-table th {
+            background-color: #333;
+        }
+
+        .button {
+            display: block;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>All Users</h1>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Organization</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% successJson.data.forEach(user=> { %>
+                    <tr>
+                        <td>
+                            <%= user.firstName %> <%= user.lastName %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td>
+                            <%= user.orgName %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+
+</html>

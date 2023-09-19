@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Single User</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            border: 2px solid white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .user-details {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .user-details li {
+            margin: 10px 0;
+        }
+
+        .button {
+            display: block;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Single User</h1>
+        <ul class="user-details">
+            <li>Name: 
+                <%= successJson.data[0].firstName %> <%= successJson.data[0].lastName %>
+            </li>
+            <li>Email: 
+                <%= successJson.data[0].email %>
+            </li>
+            <li>Organization: 
+                <%= successJson.data[0].orgName %>
+            </li>
+        </ul>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+
+</html>

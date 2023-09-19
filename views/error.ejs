@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Error</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            border: 2px solid white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .error-container {
+            background-color: #FF0000;
+            /* Red background for errors */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .error-message {
+            margin: 0;
+        }
+
+        .button {
+            display: block;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Error</h1>
+        <div class="error-container">
+            <p class="error-message">
+                <%= errorJson.success %>
+            </p>
+            <p class="error-message">
+                <%= errorJson.error_code %>
+            </p>
+            <p class="error-message">
+                <%= errorJson.message %>
+            </p>
+            <p class="error-message">
+                <%= errorJson.data %>
+            </p>
+        </div>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+
+</html>
